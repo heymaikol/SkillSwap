@@ -18,7 +18,6 @@ type AppConfig struct {
 	ServerPort string
 
 	// Database settings
-	DBDriver string
 	DBSource string
 
 	// Security settings
@@ -38,7 +37,6 @@ func LoadConfig() *AppConfig {
 	config := &AppConfig{
 		// Default values
 		ServerPort:         "8080",
-		DBDriver:           "postgres",
 		DBSource:           "host=db port=5432 user=techie password=techiestrongpassword dbname=skillswap_db sslmode=disable",
 		CORSAllowedOrigins: []string{"http://localhost:8081", "http://frontend:80"},
 		CORSAllowAll:       false,
@@ -54,10 +52,6 @@ func LoadConfig() *AppConfig {
 	// Override with environment variables if they exist
 	if port := os.Getenv("SERVER_PORT"); port != "" {
 		config.ServerPort = port
-	}
-
-	if driver := os.Getenv("DB_DRIVER"); driver != "" {
-		config.DBDriver = driver
 	}
 
 	if source := os.Getenv("DB_SOURCE"); source != "" {

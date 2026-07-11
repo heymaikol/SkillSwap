@@ -280,7 +280,7 @@
 <script>
 import { nextTick } from "vue";
 import ChatService from "@/services/ChatService";
-import { debounce } from "lodash";
+import debounce from "@/utils/debounce";
 import eventBus from "@/utils/eventBus";
 import DOMPurify from "dompurify";
 

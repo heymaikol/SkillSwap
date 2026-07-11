@@ -1,6 +1,3 @@
-// This is a recommended modification to your services/auth_service.go file
-// to make it more testable through dependency injection
-
 package services
 
 import (

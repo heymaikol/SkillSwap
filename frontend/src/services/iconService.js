@@ -1,5 +1,3 @@
-import nlp from "compromise";
-
 const iconCache = new Map();
 
 /**
@@ -16,10 +14,8 @@ export async function fetchDynamicIcon(skillName) {
     return iconCache.get(normalizedName);
   }
 
-  // Extract key nouns from the skill name
-  const doc = nlp(skillName);
-  const topics = doc.nouns().out("array");
-  const query = topics.length ? topics[0] : skillName;
+  // ponytail: raw skill name as query; NLP noun extraction dropped with the compromise dep
+  const query = skillName;
 
   let iconName = "cog"; // Default fallback
 

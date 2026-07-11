@@ -209,7 +209,7 @@
 <script>
 import axios from "axios";
 import eventBus from "@/utils/eventBus";
-import { debounce } from "lodash";
+import debounce from "@/utils/debounce";
 
 // Immediate memoization for icon mapping to avoid recreating on each component instance
 const ICON_MAPPING = Object.freeze({
